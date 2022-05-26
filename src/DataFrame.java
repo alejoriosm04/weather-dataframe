@@ -196,6 +196,7 @@ public class DataFrame {
     System.out.println("Choose type of analysis, you want to do");
     System.out.println("1. Average");
     System.out.println("2. Maximum - Minimum");
+    System.out.println("3. Variation and Desviation");
     System.out.print("Enter number: ");
     int selectionStatistics = scan.nextInt();
 
@@ -215,6 +216,9 @@ public class DataFrame {
         break;
       case 2:
         maximumMinimum(dateReference, selectionFilter);
+        break;
+      case 3:
+        varianceDesviation(dateReference, selectionFilter);
         break;
     }
   }
@@ -375,6 +379,130 @@ public class DataFrame {
         writer.println("Minumum Precipitation is: " + minimumPrecipitation + " mm. 🌧️");  
         writer.println("Maximum Temperature is: " + maximumTemperature + " °C. ⛅");  
         writer.println("Minimum Temperature is: " + minimumTemperature + " °C. ☁️"); 
+        writer.println("--------------------------------------------------------------------------------");
+        writer.close();
+      } catch (FileNotFoundException e) {
+          e.printStackTrace();
+      }
+    }
+  }
+
+  public static void varianceDesviation(Date dateReference, int selectionFilter){
+    File file = new File("Results.txt");
+    PrintWriter output = null;
+
+    Double dataCounterTemperature = 0.0;
+    Double dataCounterPrecipitation = 0.0;
+    Double adderPrecipitation = 0.0;
+    Double adderTemperature = 0.0;
+    Double averagePrecipitation = 0.0;
+    Double averageTemperature = 0.0;
+    Double desviationPrecipitation = 0.0;
+    Double desviationTemperature = 0.0;
+    Double variancePrecipitation = 0.0;
+    Double varianceTemperature = 0.0;
+    
+      if (selectionFilter == 1) {
+      for (int i = 0; i < climateData.size(); i++) {
+        if (climateData.get(i).getPrecipitation() > -1.0 && climateData.get(i).getDate().before(dateReference)) {
+          adderPrecipitation+=climateData.get(i).getPrecipitation();
+          dataCounterPrecipitation++;
+        }
+      }
+      for (int i = 0; i < climateData.size(); i++) {
+        if (climateData.get(i).getTemperatureAverage() > -1.0 && climateData.get(i).getDate().before(dateReference)) {
+          adderTemperature+=climateData.get(i).getTemperatureAverage();
+          dataCounterTemperature++;
+        }
+      }
+      averagePrecipitation = adderPrecipitation / dataCounterPrecipitation;
+      averageTemperature = adderTemperature / dataCounterTemperature;
+
+      for (int i = 0; i < climateData.size(); i++) {
+        if (climateData.get(i).getPrecipitation() > -1.0 && climateData.get(i).getDate().before(dateReference)) {
+          Double rangePrecipitation;
+          rangePrecipitation = Math.pow(climateData.get(i).getPrecipitation() - averagePrecipitation, 2f);
+          variancePrecipitation+=rangePrecipitation;
+        }
+      }
+      for (int i = 0; i < climateData.size(); i++) {
+        if (climateData.get(i).getTemperatureAverage() > -1.0 && climateData.get(i).getDate().before(dateReference)) {
+          Double rangeTemperature;
+          rangeTemperature = Math.pow(climateData.get(i).getTemperatureAverage() - averageTemperature, 2f);
+          varianceTemperature+=rangeTemperature;
+        }
+      }
+
+      variancePrecipitation = variancePrecipitation / dataCounterPrecipitation;
+      varianceTemperature = varianceTemperature / dataCounterTemperature;
+      desviationPrecipitation = Math.sqrt(variancePrecipitation);
+      desviationTemperature = Math.sqrt(varianceTemperature);
+      System.out.println("");
+      System.out.println("Variance of Precipitation: " + String.format("%.2f",variancePrecipitation) + " 🌧️");
+      System.out.println("Desviation of Precipitation: " + String.format("%.2f",desviationPrecipitation) + " 🌧️");
+      System.out.println("Variance of Precipitation: " + String.format("%.2f",varianceTemperature) + " ⛅");
+      System.out.println("Desviation of Precipitation: " + String.format("%.2f",desviationTemperature) + " ⛅");
+      System.out.println("--------------------------------------------------------------------------------");
+      try{
+        PrintWriter writer = new PrintWriter(new FileOutputStream(new File("Result.txt"), true));
+        writer.println("Variance of Precipitation: " + String.format("%.2f",variancePrecipitation) + " 🌧️");
+        writer.println("Desviation of Precipitation: " + String.format("%.2f",desviationPrecipitation) + " 🌧️");
+        writer.println("Variance of Precipitation: " + String.format("%.2f",varianceTemperature) + " ⛅");
+        writer.println("Desviation of Precipitation: " + String.format("%.2f",desviationTemperature) + " ⛅");
+        writer.println("--------------------------------------------------------------------------------");
+        writer.close();
+      } catch (FileNotFoundException e) {
+          e.printStackTrace();
+      }
+      
+    } else if (selectionFilter == 2) {
+      for (int i = 0; i < climateData.size(); i++) {
+        if (climateData.get(i).getPrecipitation() > -1.0 && climateData.get(i).getDate().after(dateReference)) {
+          adderPrecipitation+=climateData.get(i).getPrecipitation();
+          dataCounterPrecipitation++;
+        }
+      }
+      for (int i = 0; i < climateData.size(); i++) {
+        if (climateData.get(i).getTemperatureAverage() > -1.0 && climateData.get(i).getDate().after(dateReference)) {
+          adderTemperature+=climateData.get(i).getTemperatureAverage();
+          dataCounterTemperature++;
+        }
+      }
+      averagePrecipitation = adderPrecipitation / dataCounterPrecipitation;
+      averageTemperature = adderTemperature / dataCounterTemperature;
+
+      for (int i = 0; i < climateData.size(); i++) {
+        if (climateData.get(i).getPrecipitation() > -1.0 && climateData.get(i).getDate().after(dateReference)) {
+          Double rangePrecipitation;
+          rangePrecipitation = Math.pow(climateData.get(i).getPrecipitation() - averagePrecipitation, 2f);
+          variancePrecipitation+=rangePrecipitation;
+        }
+      }
+      for (int i = 0; i < climateData.size(); i++) {
+        if (climateData.get(i).getTemperatureAverage() > -1.0 && climateData.get(i).getDate().after(dateReference)) {
+          Double rangeTemperature;
+          rangeTemperature = Math.pow(climateData.get(i).getTemperatureAverage() - averageTemperature, 2f);
+          varianceTemperature+=rangeTemperature;
+        }
+      }
+
+      variancePrecipitation = variancePrecipitation / dataCounterPrecipitation;
+      varianceTemperature = varianceTemperature / dataCounterTemperature;
+      desviationPrecipitation = Math.sqrt(variancePrecipitation);
+      desviationTemperature = Math.sqrt(varianceTemperature);
+
+      System.out.println("");
+      System.out.println("Variance of Precipitation: " + String.format("%.2f",variancePrecipitation) + " 🌧️");
+      System.out.println("Desviation of Precipitation: " + String.format("%.2f",desviationPrecipitation) + " 🌧️");
+      System.out.println("Variance of Precipitation: " + String.format("%.2f",varianceTemperature) + " ⛅");
+      System.out.println("Desviation of Precipitation: " + String.format("%.2f",desviationTemperature) + " ⛅");
+      System.out.println("--------------------------------------------------------------------------------");
+      try{
+        PrintWriter writer = new PrintWriter(new FileOutputStream(new File("Result.txt"), true));
+        writer.println("Variance of Precipitation: " + String.format("%.2f",variancePrecipitation) + " 🌧️");
+        writer.println("Desviation of Precipitation: " + String.format("%.2f",desviationPrecipitation) + " 🌧️");
+        writer.println("Variance of Precipitation: " + String.format("%.2f",varianceTemperature) + " ⛅");
+        writer.println("Desviation of Precipitation: " + String.format("%.2f",desviationTemperature) + " ⛅");
         writer.println("--------------------------------------------------------------------------------");
         writer.close();
       } catch (FileNotFoundException e) {
