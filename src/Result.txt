@@ -1,0 +1,40 @@
+After 27-07-2016
+Average Precipitation is:3.83 🌧️
+Average Temperature is: 23.49 ⛅
+--------------------------------------------------------------------------------
+Before 14-02-2005
+Maximum Precipitation is: 90.9 mm. 🌧️
+Minimum Precipitation is: 0.0 mm. 🌧️
+Maximum Temperature is: 39.4 °C. ⛅
+Minimum Temperature is: 2.2 °C. ☁️
+--------------------------------------------------------------------------------
+After 01-01-2018
+Average Precipitation is:3.01 🌧️
+Average Temperature is: 23.48 ⛅
+--------------------------------------------------------------------------------
+Before 25-05-2003
+Maximum Precipitation is: 224.0 mm. 🌧️
+Minimum Precipitation is: 0.0 mm. 🌧️
+Maximum Temperature is: 29.2 °C. ⛅
+Minimum Temperature is: 0.5 °C. ☁️
+--------------------------------------------------------------------------------
+After 12-12-2012
+Maximum Precipitation is: 432.3 mm. 🌧️
+Minumum Precipitation is: 0.0 mm. 🌧️
+Maximum Temperature is: 29.0 °C. ⛅
+Minimum Temperature is: 0.7 °C. ☁️
+--------------------------------------------------------------------------------
+Before 29-08-2017
+Average Precipitation:4.23 🌧️
+Average Temperature: 17.33 ⛅
+--------------------------------------------------------------------------------
+After 01-01-2019
+Average Precipitation is:3.78 🌧️
+Average Temperature is: 19.14 ⛅
+--------------------------------------------------------------------------------
+After 01-01-2019
+Maximum Precipitation is: 67.1 mm. 🌧️
+Minumum Precipitation is: 0.0 mm. 🌧️
+Maximum Temperature is: 31.6 °C. ⛅
+Minimum Temperature is: 4.0 °C. ☁️
+--------------------------------------------------------------------------------
