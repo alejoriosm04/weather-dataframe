@@ -42,7 +42,7 @@
     1. Downloading all the files, doing a <code>git clone</code> in console. And creating all the deveploment environment of Java.
 </p>
 <p>
-    2. Going to our <a href = "https://replit.com/@ariosm/Final-Project">Replit Project</a> and clicking in the green button in the right corner of the screen. Let us to know your opinions and comments there!
+    2. Going to our <a href = "https://replit.com/@ariosm/Final-Project">Replit Project</a> and clicking on the green button in the right corner of the screen. Let us to know your opinions and comments there!
 </p>
 <h2>
     Developers - Contribute
