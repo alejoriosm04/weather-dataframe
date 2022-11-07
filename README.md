@@ -10,42 +10,38 @@
 -   🌡️ Calculate the average temperature of your city
 -   🤔 Take decisions based on predictions
 
-This data frame will allow you to make different calculations with
-multiple data taken by the National Oceanic and Atmospheric
-Administration (NOAA). You will have multiple options of statistics
-according to the filter that you want to give to the program.
-
 ## How does it work?
 
 1. First of all, if you want to analyze a specific city that is not in the
 default menu, you will have to extract all the necessary information
-from [NOAA web page](https://gis.ncdc.noaa.gov).
-    - However, you will need
-to follow some standards to make it possible to read the file in the
-best way.
-    - Then, add it to the project folder and finally, we will add to
-the Options Menu in the Main screen.
+from the [NOAA web page](https://gis.ncdc.noaa.gov).
+    - However, you will need to follow some standards to make
+    it possible to read the file in the
+    best way.
+    - Then, add it to the project folder and finally, we will add it to
+    the Options Menu in the Main screen.
     - Subsequently, all the statistics
-functions would work in the program.
+    functions would work in the program.
 
 2. After all this, you will see a menu with all the options and
-capabilities of the program. Try to interact much as possible with the
-program and discover it.
+capabilities of the program.
     - At the moment, the program offers only one filter options and two
-statistic functions.
+    statistical functions.
     - The filter option is an specific date, that the
-user choose and the program will compare all the data in the file with
-this user date.
-    - The statistic functions are average and maximum-minimum.
+    user choose and the program will compare all the data in the file with
+    this user date.
+    - The statistical functions are
+        - average
+        - and maximum-minimum.
 
-4. The program
-will print all the complete information about what you entered.
+4. The program will print all the complete
+information based on your input.
 
 5. Finally, all the user interaction will be saved in a `.txt` file.
 
 ## Run
 
-To test it, you have two options.
+Two options:
 
 1. `git clone` and create the Java environment (boo!).
 
@@ -53,10 +49,10 @@ To test it, you have two options.
 
 ## Authors
 
-This project was developed by [Alejandro
-Ríos](https://github.com/alejoriosm04), [Jerónimo
-Guerrero](https://github.com/JGuerrero08) and [Miguel
-Díaz](https://github.com/MADiazV1)
+This project was developed by:
+- [Alejandro Ríos](https://github.com/alejoriosm04),
+- [Jerónimo Guerrero](https://github.com/JGuerrero08),
+- and [Miguel Díaz](https://github.com/MADiazV1)
 
 ## Contribute
 
